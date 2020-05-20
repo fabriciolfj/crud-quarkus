@@ -35,3 +35,8 @@ If you want to learn more about building native executables, please consult http
 ./mvnw quarkus:add-extension -Dextensions="orm-panache, jdbc-mysql, resteasy-jsonb"
 ./mvnw quarkus:add-extension -Dextensions="health" Equivale ao actuator do spring
 ```
+## Instalando graalvm
+```
+Descompactando o arquivo tar.gz tar -zxvf nome
+adicionar no .bashrc GRAAL_VM
+```

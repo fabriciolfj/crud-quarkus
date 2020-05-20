@@ -10,10 +10,13 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.math.BigDecimal;
 import java.util.Date;
+import java.util.Objects;
 
 @Entity
+@Table(name = "PRODUTO")
 public class Produto extends PanacheEntityBase {
 
     @Id
@@ -88,20 +91,15 @@ public class Produto extends PanacheEntityBase {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-
         if (o == null || getClass() != o.getClass()) return false;
 
         Produto produto = (Produto) o;
 
-        return new EqualsBuilder()
-                .append(id, produto.id)
-                .isEquals();
+        return Objects.equals(id, produto.id);
     }
 
     @Override
     public int hashCode() {
-        return new HashCodeBuilder(17, 37)
-                .append(id)
-                .toHashCode();
+        return id != null ? id.hashCode() : 0;
     }
 }
